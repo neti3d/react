@@ -7,7 +7,7 @@
   
   body {
     background: #ececec;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+/*    font-family: Lato, Helvetica, Arial, sans-serif;*/
     display: flex;
     place-items: start;
     min-width: 320px;
@@ -27,7 +27,7 @@
     width: 100vw;
     z-index: 10;
     border-bottom: 1px solid #999;
-    box-shadow: 0 1px 8px 4px #777;
+    box-shadow: 0 1px 6px 4px #777;
   }
   
   .nav-wrapper {
@@ -41,7 +41,7 @@
   }
   
   #navbar ul {
-    display: inline-block;
+    /* display: inline-block; */
     float: right;
     list-style: none;
     text-align: right;
@@ -57,10 +57,10 @@
   #navbar li a {
     color: rgb(0, 122, 74);
     display: block;
-    font-size: 0.7em;
+    font-size: 0.76em;
     height: 50px;
     letter-spacing: 1px;
-    margin: 0 20px;
+    margin: 0 15px;
     padding: 0 4px;
     position: relative;
     text-decoration: none;
@@ -79,5 +79,45 @@
   #contenedor {
     position: relative;
     padding: 25px;
-    width: 100vw;
+  }
+
+  .item {
+    width: 32%;
+    border-bottom: 1px solid #999;
+    float: left;
+    padding:20px 15px;
+    margin-right: 1%;
+    text-align: center;
+  }
+  .img {
+    max-width: 100%;
+    height: auto;
+    border-radius: .4rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    background: #f00;
+    color: #FFF;
+  }
+  .text-center {
+    text-align: center;
+  }
+
+  .col-ch {
+    width: 38%;
+    float: left;
+    padding: 30px;
+  }
+  .col-gr {
+    width: 60%;
+    margin: 0 1%;
+    float: left;
+    padding: 30px;
   }
