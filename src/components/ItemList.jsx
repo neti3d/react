@@ -1,4 +1,6 @@
-import Item from "../components/Item"
+/* eslint-disable react/prop-types */
+import Item from '../components/Item'
+
 function ItemList({productos}) {
     return (
         <>
@@ -8,6 +10,6 @@ function ItemList({productos}) {
         }
         </>
     )
-  }
+}
 
 export default ItemList

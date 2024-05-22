@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ItemCount from '../components/ItemCount'
 
 function ItemDetail({producto}) {
@@ -10,8 +11,10 @@ function ItemDetail({producto}) {
             </div>
             <div className="col-ch">
                 <p>{producto.detalles}</p>
+                <h4>Stock: {producto.stock} u.</h4>
+                <h4>Precio: $ {producto.precio}</h4>
             </div>
-            <ItemCount />
+            <ItemCount stock={producto.stock} p={producto} />
         </>
     )
 }

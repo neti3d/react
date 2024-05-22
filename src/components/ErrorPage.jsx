@@ -7,6 +7,6 @@ function ErrorPage() {
             <Link to="/">Volver</Link>
         </div>
     )
-  }
+}
 
 export default ErrorPage

@@ -1,6 +1,6 @@
 import aiLogo from '../assets/logo-ai.png'
 import CartWidget from '../components/CartWidget'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function NavBar() {
     return (
@@ -22,6 +22,6 @@ function NavBar() {
         </div>
       </nav>
     )
-  }
+}
 
 export default NavBar

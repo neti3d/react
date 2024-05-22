@@ -1,4 +1,5 @@
-import {Link} from 'react-router-dom'
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom'
 
 function Item({producto}) {
     return (
@@ -6,6 +7,8 @@ function Item({producto}) {
             <h3>{producto.nombre}</h3>
             <div className="badge">{producto.categoria}</div>
             <img src={producto.imagen} alt={producto.nombre} title={producto.nombre} className="img" />
+            <br />
+            <h4>${producto.precio}</h4>
             <br />
             <Link to={`/item/${producto.id}`} className="button">+ info</Link>
         </div>

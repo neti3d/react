@@ -43,30 +43,30 @@ const plantas = [
     }
 ]
 
-function getDatos(tipo) {
-  return new Promise( resolve => {
-    setTimeout( () => {
-      if(tipo) {
-        const plantasTipo = plantas.filter(pl => pl.categoria == tipo);
-        resolve(plantasTipo)
-      }
-      else
-        resolve(plantas)
-      console.log("Enviando plantas...")
-    }, 1000)
-  })
-}
+// function getDatos(tipo) {
+//   return new Promise( resolve => {
+//     setTimeout( () => {
+//       if(tipo) {
+//         const plantasTipo = plantas.filter(pl => pl.categoria == tipo);
+//         resolve(plantasTipo)
+//       }
+//       else
+//         resolve(plantas)
+//       console.log("Enviando plantas...")
+//     }, 1000)
+//   })
+// }
 
-function getDatosById(id) {
-  return new Promise( resolve => {
-    setTimeout( () => {
-      if(id) {
-        const planta = plantas.filter(pl => pl.id == id);
-        resolve(planta)
-      }
-      console.log("Enviando planta...")
-    }, 1000)
-  })
-}
+// function getDatosById(id) {
+//   return new Promise( resolve => {
+//     setTimeout( () => {
+//       if(id) {
+//         const planta = plantas.filter(pl => pl.id == id);
+//         resolve(planta)
+//       }
+//       console.log("Enviando planta...")
+//     }, 1000)
+//   })
+// }
 
-export {getDatos, getDatosById}
+// export {getDatos, getDatosById}
