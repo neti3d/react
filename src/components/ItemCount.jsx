@@ -1,7 +1,9 @@
-import { useState } from 'react'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 import { useCart } from '../context/cartContext'
 import { Link } from 'react-router-dom'
+
+import { Button, Segment, Header, Label } from 'semantic-ui-react'
 
 function ItemCount({stock, p}) {
     const {addToCart} = useCart()
@@ -25,24 +27,23 @@ function ItemCount({stock, p}) {
 
     if(added) {
         return (
-            <div className="text-center">
-                <h4>Agregado! ({cantidad} u.)</h4>
-                <br />
-                <Link to="/Cart" className="button">Ver carrito</Link>
-            </div>
+            <Segment padded color='teal'>
+                <Header as='h4'>Agregado! ({cantidad} u.)</Header>
+                <Button as={Link} to="/Cart" color='teal' size='large'>Ver carrito</Button>
+            </Segment>
         )
     }
     else {
         return (
-            <div className="text-center">
+            <Segment basic padded>
                 <strong>Cantidad</strong>
                 <br />
-                <button onClick={resta}>-</button>
-                {cantidad}
-                <button onClick={suma}>+</button>
-                <br />
-                <button onClick={() => prepareCart(p, cantidad)}>Agregar al carrito</button>  
-            </div>
+                <Button circular icon='minus' color='olive' size='small' onClick={resta} />
+                <Label color='black' size='big'> {cantidad} </Label>
+                <Button circular icon='plus' color='olive' size='small' onClick={suma} />
+                <br /><br />
+                <Button color='yellow' onClick={() => prepareCart(p, cantidad)}>Agregar al carrito</Button>  
+            </Segment>
         )
     }
 

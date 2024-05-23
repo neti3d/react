@@ -3,6 +3,17 @@ import { useCart } from '../context/cartContext'
 import { createOrder } from '../firebase/db'
 import { useState } from 'react'
 
+import {
+    Container,
+    Header,
+    Button,
+    Form,
+    FormField,
+    Segment,
+    Label,
+    Icon
+} from 'semantic-ui-react'
+
 function CheckoutForm() {
     const {cart, getTotal, delCart} = useCart()
     const [comprado, setComprado] = useState(0)
@@ -23,33 +34,40 @@ function CheckoutForm() {
         
         setComprado(1)
         createOrder(order)
-        .then((res) => document.getElementById("demo").innerHTML = res)
+            .then((res) => document.getElementById("pedido").innerHTML = res)
         delCart()
     }
 
     if(comprado) {
         return (
-            <div id="contenedor">
-                <h1>Checkout</h1>
-                <h3>Gracias por tu compra!</h3>
-                <h4>El identificador de tu pedido es: <span id="demo">...cargando...</span></h4>
-                
-            </div>
+            <Container>
+                <Header as='h1'>Finalizar compra</Header>
+                <Header as='h3'>Gracias por tu compra!</Header>
+                <Header as='h3'>El identificador de tu pedido es: <Label size='huge' id='pedido'><Icon loading name='spinner' /></Label></Header>
+            </Container>
         )
     } else {
         return (
-            <div id="contenedor">
-                <h1>Checkout</h1>
-                <form onSubmit={handleForm}>
-                    <input type='text' name='name' placeholder='Nombre' required />
-                    <br />
-                    <input type='email' name='email' placeholder='E-mail' />
-                    <br />
-                    <input type='text' name='phone' placeholder='Teléfono' required />
-                    <br />
-                    <button type='submit'>Comprar</button>
-                </form>
-            </div>
+            <Container>
+                <Header as='h1'>Finalizar compra</Header>
+                <Segment padded raised>
+                    <Form onSubmit={handleForm}>
+                        <FormField required>
+                            <label>Nombre</label>
+                            <input type='text' name='name' placeholder='Nombre' maxLength='40' required />
+                        </FormField>
+                        <FormField>
+                            <label>E-mail</label>
+                            <input type='email' name='email' placeholder='E-mail' maxLength='40' />
+                        </FormField>
+                        <FormField required>
+                        <label>Teléfono</label>
+                            <input type='text' name='phone' placeholder='Teléfono' maxLength='20' required />
+                        </FormField>
+                        <Button type='submit' color="teal">Confirmar</Button>
+                    </Form>
+                </Segment>
+            </Container>
         )
     }
     

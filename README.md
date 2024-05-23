@@ -2,8 +2,6 @@
 Curso React - Coderhouse
 
 ## Entrega final
-Landing con 3 componentes
-
 [React](https://es.react.dev/)
 v 18.2
 
@@ -15,8 +13,10 @@ v 5.1.6
 - Firebase
 - Spinners React
 
+## UI
+- [Semantic UI React](https://react.semantic-ui.com/)
+
 ## Deploy
 - Vercel
-[Link a proyecto](https://react-eight-kohl.vercel.app/)
 
 Ernesto Amor - 2024

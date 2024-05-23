@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/cartContext'
-import icono from '../assets/cart-plant.png'
+
+import { Icon, Button } from 'semantic-ui-react'
 
 function CartWidget() {
     const {cart} = useCart()
 
     return (
-        <li><Link to="/cart"><img height="auto" src={icono} /> ({cart.length})</Link></li>
+        <Button as={Link} to="/cart" color='green'>
+            <Icon name='cart' size='large' /> ({cart.length})
+        </Button>
     )
 }
 

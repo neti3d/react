@@ -1,11 +1,13 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+import { Container, Header, Button } from 'semantic-ui-react'
 
 function ErrorPage() {
     return (
-        <div id="contenedor">
-            <h1>404</h1>
-            <Link to="/">Volver</Link>
-        </div>
+        <Container textAlign='center'>
+            <Header as='h2'>La página que buscás no existe!</Header>
+            <Button as={Link} to="/" size='big' color='orange'>Volver al inicio</Button>
+        </Container>
     )
 }
 

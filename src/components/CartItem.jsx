@@ -1,15 +1,29 @@
 /* eslint-disable react/prop-types */
+import {
+    Item as ItemUI,
+    ItemImage,
+    ItemContent,
+    ItemHeader,
+    ItemMeta,
+    ItemDescription
+} from 'semantic-ui-react'
 
 function Item({producto}) {
     const subtotal = producto.prod.precio * producto.q
+
     return (
-        <div className="itemcart">
-            <img src={producto.prod.imagen} alt={producto.prod.nombre} title={producto.prod.nombre} className="imgcart" />
-            <br />
-            <h3>{producto.prod.nombre}</h3>
-            <h4>Cantidad: {producto.q}</h4>
-            <h4>Subtotal: ${subtotal}</h4>
-        </div>
+        <ItemUI>
+            <ItemImage src={producto.prod.imagen} alt={producto.prod.nombre} title={producto.prod.nombre} size='small' />
+            <ItemContent>
+                <ItemHeader>{producto.prod.nombre}</ItemHeader>
+                <ItemMeta>
+                    Cantidad: {producto.q}
+                </ItemMeta>
+                <ItemDescription>
+                    Subtotal: ${subtotal}
+                </ItemDescription>
+            </ItemContent>
+        </ItemUI>
     )
 }
 

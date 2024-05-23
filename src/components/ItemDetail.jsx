@@ -1,21 +1,38 @@
 /* eslint-disable react/prop-types */
 import ItemCount from '../components/ItemCount'
 
+import {
+    Item as ItemUI,
+    ItemImage,
+    ItemContent,
+    ItemHeader,
+    ItemMeta,
+    ItemDescription,
+    ItemGroup,
+    Label,
+    Header,
+    Segment
+} from 'semantic-ui-react'
+
 function ItemDetail({producto}) {
     return (
-        <>
-            <h1 className="text-center">{producto.nombre}</h1>
-            <h3 className="text-center">Tipo: {producto.categoria}</h3>
-            <div className="col-gr">
-                <img src={producto.imagen} alt={producto.id} title={producto.nombre} className="img" />
-            </div>
-            <div className="col-ch">
-                <p>{producto.detalles}</p>
-                <h4>Stock: {producto.stock} u.</h4>
-                <h4>Precio: $ {producto.precio}</h4>
-            </div>
-            <ItemCount stock={producto.stock} p={producto} />
-        </>
+        <ItemGroup>
+            <ItemUI>
+                <ItemImage src={producto.imagen} alt={producto.id} title={producto.nombre} size='large' circular />
+                <ItemContent>
+                    <ItemHeader as='h1'>{producto.nombre}</ItemHeader>
+                    <ItemMeta>
+                        <Label size='large' color='purple'> {producto.categoria} </Label>
+                    </ItemMeta>
+                    <ItemDescription>
+                        <Segment color='green' piled padded>{producto.detalles}</Segment>     
+                        <Header as='h4'>Stock: {producto.stock} u.</Header>
+                        <Header as='h4'>Precio: $ {producto.precio}</Header>
+                    </ItemDescription>
+                    <ItemCount stock={producto.stock} p={producto} />
+                </ItemContent>
+            </ItemUI>  
+        </ItemGroup>   
     )
 }
 

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getItemsAll, getItemsCat } from '../firebase/db'
 
+import { Container, Divider, Header, Label } from 'semantic-ui-react'
+
 function ItemListContainer() {
     const[producto, setProducto] = useState([])
     const[load, setLoad] = useState(false)
@@ -24,17 +26,18 @@ function ItemListContainer() {
 
     if(load) {
         return (
-            <div id="contenedor">
-                <h2 className="text-center">Plantas encontradas</h2>
-                <h4 className="text-center">{tipo}</h4>
+            <Container textAlign='center'>
+                <Header as='h2'>Plantas encontradas</Header>
+                {tipo ? <Label size='large' color='purple' circular>{tipo}</Label> : ""}
+                <Divider hidden />
                 <ItemList productos={producto} />
-            </div>
+            </Container>
         )
     } else {
         return (
-            <div id="contenedor">     
+            <Container textAlign='center'>     
                 <Loader />
-            </div>
+            </Container>
         )
     }
 }

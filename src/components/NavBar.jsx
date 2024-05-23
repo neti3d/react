@@ -2,25 +2,24 @@ import aiLogo from '../assets/logo-ai.png'
 import CartWidget from '../components/CartWidget'
 import { Link } from 'react-router-dom'
 
+import { Menu, MenuItem, Image, Segment, Button, ButtonGroup } from 'semantic-ui-react'
+
 function NavBar() {
     return (
-      <nav id="navbar">
-        <div className="nav-wrapper">
-          <div className="logo">
-            <Link to="/">
-              <img height="auto" src={aiLogo} />
-            </Link>
-          </div>
-      
-          <ul id="menu">
-            <li><Link to="/">[todas]</Link></li>
-            <li><Link to="/category/interior">De interior</Link></li>
-            <li><Link to="/category/exterior">De exterior</Link></li>
-            <li><Link to="/category/comestible">Comestibles</Link></li>
-            <CartWidget />
-          </ul>
-        </div>
-      </nav>
+        <Segment raised clearing>
+            <Menu secondary>
+                <Link to="/"><Image src={aiLogo} /></Link>
+                <MenuItem position='right'>
+                    <ButtonGroup size='large'>
+                        <Button as={Link} to="/" content='TODAS' icon='leaf' labelPosition='left' color='green' />
+                        <Button as={Link} to="/category/interior" color='olive'>De interior</Button>
+                        <Button as={Link} to="/category/exterior" color='olive'>De exterior</Button>
+                        <Button as={Link} to="/category/comestible" color='olive'>Comestibles</Button>
+                        <CartWidget />
+                    </ButtonGroup>
+                </MenuItem>
+            </Menu>
+        </Segment>
     )
 }
 

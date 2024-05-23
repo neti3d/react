@@ -4,6 +4,8 @@ import { getItem } from '../firebase/db'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { Container } from 'semantic-ui-react'
+
 function ItemDetailContainer() {
     const[planta, setPlanta] = useState([])
     const[load, setLoad] = useState(false)
@@ -21,15 +23,15 @@ function ItemDetailContainer() {
 
     if(load) {
         return (
-            <div id="contenedor">
+            <Container textAlign='center'>
                 <ItemDetail producto={planta} />
-            </div>
+            </Container>
         )
     } else {
         return (
-            <div id="contenedor">
+            <Container textAlign='center'>
                 <Loader />
-            </div>
+            </Container>
         )
     }
 }
